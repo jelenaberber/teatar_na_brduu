@@ -13,6 +13,9 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="shortcut icon" type="image/png" href="assets/img/icon.png">
+    <!-- KEYWORDS & DESCRIPTION -->
+    <meta name="keywords" content="blagajna teatra, karte, kupovina, radno vreme blagajne "/>
+    <meta name="description" content="Blagajna radi od ponedeljka do subote od 16-20h a nedeljom, kada se igra predstava, sat vremena pred početak predstave."/>
     <title>Blagajna</title>
 </head>
 <body>
@@ -21,9 +24,9 @@
         
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="assets/img/images.jpg" alt="" id="logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <a class="navbar-brand" href="index.html"><img src="assets/img/images.jpg" alt="nav" id="logo"/></a>
+                <button id="navbar-btn" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" id="menu">
@@ -32,6 +35,11 @@
                 </div>
             </div>
         </nav>
+        <div class="col-12 d-none" id="bar-menu">
+            <ul id="bar" class="d-flex flex-column align-items-end mx-4">
+                <!-- ispis dinamicki -->
+            </ul>
+        </div>
        
     </header>
 

@@ -13,6 +13,9 @@
     <!-- Font awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="shortcut icon" type="image/png" href="assets/img/icon.png">
+    <!-- KEYWORDS & DESCRIPTION -->
+    <meta name="keywords" content="teatar na brdu, karte, predstava, komedija, andrija milosevic"/>
+    <meta name="description" content="Otvoren je novi teatar na brdu. Cekujemo vas. "/>
     <title>Početna</title>
 </head>
 <body>
@@ -20,9 +23,9 @@
         <!--nav bar-->
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="assets/img/images.jpg" alt="" id="logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <a class="navbar-brand" href="index.html"><img src="assets/img/images.jpg" alt="nav" id="logo"/></a>
+                <button id="navbar-btn" class="navbar-toggler">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav" id="menu">
@@ -31,6 +34,11 @@
                 </div>
             </div>
         </nav>
+        <div class="col-12 d-none" id="bar-menu">
+            <ul id="bar" class="d-flex flex-column align-items-end mx-4">
+                <!-- ispis dinamicki -->
+            </ul>
+        </div>
     </header>
 
     <main>
@@ -47,7 +55,7 @@
         <div class="container-fluid pt-3 mt-4" id="tickets">
             <div class="col-12 d-flex flex-wrap flex-column align-items-center">
                 <h1>KARTE - <a href="blagajna.html">BLAGAJNA</a> / <a href="repertoar.html">ONLINE</a></h1>
-                <img src="assets/img/ticket.png" alt="">
+                <img src="assets/img/ticket.png" alt="ticket"/>
             </div>
         </div>
         <div class="container mt-4 d-flex flex-wrap flex-column align-items-center" id="slide">
@@ -61,21 +69,21 @@
                 </div>
                 <div class="carousel-inner">
                   <div class="carousel-item active"  id="slider">
-                    <img src="assets/img/macka-pecena-slider.png" class="d-block w-100" alt="#Mačka_pečena">
+                    <img src="assets/img/macka-pecena-slider.png" class="d-block w-100" alt="#Mačka_pečena"/>
                     <div class="carousel-caption d-none d-md-block">
-                        <h5>23.11.</h5>
+                        <h5>21.12.</h5>
                         <p>#Mačka_pečena</p>
                     </div>
                   </div>
                   <div class="carousel-item" id="slider">
-                    <img src="assets/img/celo-telo-tu-me-boli-slider.png" class="d-block w-100" alt="Celo telo tu me boli">
+                    <img src="assets/img/celo-telo-tu-me-boli-slider.png" class="d-block w-100" alt="Celo telo tu me boli"/>
                     <div class="carousel-caption d-none d-md-block">
-                      <h5>13.11.</h5>
+                      <h5>9.12.</h5>
                       <p>Celo telo tu me boli</p>
                     </div>
                   </div>
                   <div class="carousel-item" id="slider">
-                    <img src="assets/img/repertoar-novembar.png" class="d-block w-100" alt="Repertoar">
+                    <img src="assets/img/repertoar-novembar.png" class="d-block w-100" alt="Repertoar"/>
                   </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -88,7 +96,6 @@
                 </button>
             </div>
         </div>
-        
     </main>
     <footer>
         <div class="container-fluid mt-4 d-flex justify-content-center" id="footer">

@@ -1,6 +1,6 @@
 window.onload = function() {
     createLayout();
-
+    toggleNav();
     // navigation
     let url = document.location.pathname;
     if(url=="/" || url=="/index.html"){
@@ -37,12 +37,18 @@ window.onload = function() {
                     <a class="nav-link" href="${menuLinks[i]}">${menuPages[i]}</a>
                 </li>
             `;
+            document.querySelector('#bar').innerHTML += `
+                <li><a href="${menuLinks[i]}">${menuPages[i]}</a></li>
+            `
         }
+        
+
 
         //footer
         var footerMenu = document.querySelector('#footerMenu');
         var link = document.querySelector('#link');
-        var importantLinks = ["O autoru", "Dokumentacija"];
+        var importantLinks = ["Sitemap", "Dokumentacija"];
+        var important = ['sitemap.xml', 'dokumentacija']
         var socialIcon = ["instagram", "facebook", "twitter"];
         let socialLinks = ['https://www.instagram.com/teatarnabrdu/', 'https://sr-rs.facebook.com/teatarnabrdu/', 'https://twitter.com/tickets_rs/status/986905081898512384'];
         for(let i = 0; i < menuPages.length; i++){
@@ -55,7 +61,7 @@ window.onload = function() {
             link.innerHTML += 
             `
             <li class="py-2">
-                <a href="#">${importantLinks[i]}</a>
+                <a href="${important[i]}">${importantLinks[i]}</a>
             </li>
             `
         }
@@ -110,7 +116,6 @@ window.onload = function() {
         for (const btn of svaDugmad) {
             btn.onclick = () => {
                 document.querySelector('#modal').style.display="block"; 
-                // document.querySelector('#buy-for').innerHTML += title;
             }
         }
     }
@@ -123,6 +128,20 @@ window.onload = function() {
     }
     function modalBuy(){
         $('#close').click(()=> $('#modal-2').hide());
+    }
+
+    //responsive nav
+
+    function toggleNav () {
+        document.getElementById("navbar-btn").addEventListener('click', ()=>{
+            if (document.getElementById('bar-menu').classList.contains('d-none')){
+                document.getElementById('bar-menu').classList.remove('d-none');
+            } 
+            else {
+                document.getElementById('bar-menu').classList.add('d-none');
+            }
+            
+        })
     }
 
 
@@ -190,6 +209,7 @@ window.onload = function() {
             let ruleEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
             let email = document.querySelector('#tbemail').value;
             let brojac = 0;
+            let phone = document.querySelector.value;
             if(name === ""){
                 $('#spanName').html("Ime je obavezno").css('display', 'block');
             }
@@ -222,6 +242,10 @@ window.onload = function() {
                 $('#spanEmail').hide();
                 brojac++;
             }
+            if(phone === ''){
+                $('#spanPhone').html('Broj telefona je obavezan.').css('display','block')
+            }
+            else if(!rule)
             //provera za sekciju i broj karata
             let section = document.querySelector('#seat');
             let value = section.selectedIndex;
@@ -303,59 +327,5 @@ window.onload = function() {
             document.querySelector('#media').innerHTML += `<a href="${authorLinks[i]}" class="mx-2"><i class="fa-brands fa-${authorMedia[i]}"></i></a>`
         }
     }
-
-    // function slider(){
-        const carouselSlide = document.querySelector('.carousel-slide');
-        const carouselImages = document.querySelectorAll('.carousel-slide img');
-        // buttons
-        const prevBtn = document.querySelector('#prev');
-        const nextBtn = document.querySelector('#next');
-        // counter
-        var counter = 1;
-        const size = carouselImages[0].clientWidth;
-        carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)'
-        // button listeners
-        nextBtn.addEventListener('click', ()=>{
-            if(counter >= carouselImages.length - 1) return;
-            carouselSlide.style.transition = 'transform 0.4s easy-in-out';
-            counter ++;
-            carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
-        })
-        prevBtn.addEventListener('click', ()=>{
-            if(counter <=0 ) return;
-            carouselSlide.style.transition = 'transform 0.4s easy-in-out';
-            counter --;
-            carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
-        })
-        carouselSlide.ontransitionend = () => {
-            if(carouselImages[counter].id === "last-clone"){
-                carouselSlide.style.transition = 'none';
-                counter = carouselImages.length -2;
-                carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
-            }
-            if(carouselImages[counter].id === 'first-clone'){
-                carouselSlide.style.transition = 'none';
-                counter = carouselImages.length - counter;
-                carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
-            }
-        }
-
-
-
-    // }
     
-      
-    
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -25,6 +25,11 @@
 ul li{
     list-style: none;
 }
+#bar a{
+    color: var(--black);
+    text-decoration: none;
+
+}
 #menu a{
     color: var(--dark-green);
     text-decoration: none;
@@ -257,4 +262,17 @@ input:focus{
     .icons{
         font-size: 30px;
     }
+}
+@media screen and (min-width: 989px){
+    #bar-menu{
+        display: none;
+    }
+}
+#backToTop{
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-green);
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
 }
