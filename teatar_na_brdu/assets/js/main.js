@@ -331,7 +331,7 @@ window.onload = function() {
         let authorLinks = ['https://www.instagram.com/berber__j/', 'https://www.linkedin.com/in/jelena-berber-5378bb252/', 'https://github.com/jelenaberber'];
         let authorMedia = ['instagram', 'linkedin', 'github'];
         for(let i = 0; i < authorLinks.length; i++){
-            document.querySelector('#media').innerHTML += `<a href="${authorLinks[i]}" class="mx-2"><i class="fa-brands fa-${authorMedia[i]}"></i></a>`
+            document.querySelector('.icons').innerHTML += `<a href="${authorLinks[i]}" class="mx-2"><i class="fa-brands fa-${authorMedia[i]}"></i></a>`
         }
     }
     
