@@ -148,7 +148,7 @@ window.onload = function() {
   //repertoar
     function repertoar(){
         let title = ['celo telo tu me boli', 'zaustavite zemlju hoću da izađem', 'šećer je sitan osim kad je kocka', 'petrijin venac', 'frenki i džoni', 'idem putem pa zagrlim drvo', '#mačkapečena', 'pazi šta želiš'];
-        let when = ['.12. <br/> petak, 20:00', '.12. <br/> subota, 20:00', '.12. <br/> utorak, 20:00', '.12. <br/> petak, 20:00', '.12. <br/> subota, 20:00','.12. <br/> nedelja, 20:00','.12. <br/> sreda, 20:00', '25.12. <br/> nedelja, 20:00',];
+        let when = ['.12. <br/> petak, 20:00', '.12. <br/> subota, 20:00', '.12. <br/> utorak, 20:00', '.12. <br/> petak, 20:00', '.12. <br/> subota, 20:00','.12. <br/> nedelja, 20:00','.12. <br/> sreda, 20:00', '.12. <br/> nedelja, 20:00',];
         let dayInMonth = [9, 10, 13, 16, 17, 18, 21, 25]
         let img = ['celo-telo-tu-me-boli.png', 'zaustavite-zemlju-hocu-da-izadjem.jpg', 'Secer-je-sitan-osim-kad-je-kocka.png', 'petrijin-venac.png', 'frenki-dzoni.jpg', 'idem-putem-i-zagrlim-drvo.png', 'macka-pecena.png', 'pazi-sta-zelis.jpg']
         
@@ -207,9 +207,10 @@ window.onload = function() {
             let lastName = document.querySelector('#tbLastName').value;
             let rule = /^[A-ZČĆĐŠŽ][a-zčćđšž]{2,15}$/;
             let ruleEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            let rulePhone = /^06[0-9]{7,8}$/;
             let email = document.querySelector('#tbemail').value;
             let brojac = 0;
-            let phone = document.querySelector.value;
+            let phone = document.querySelector('#phone').value;
             if(name === ""){
                 $('#spanName').html("Ime je obavezno").css('display', 'block');
             }
@@ -245,7 +246,13 @@ window.onload = function() {
             if(phone === ''){
                 $('#spanPhone').html('Broj telefona je obavezan.').css('display','block')
             }
-            else if(!rule)
+            else if((!rulePhone.test(phone))){
+                $('#spanPhone').html('Broj telefona nije dobrog formata.').css('display','block')
+            }
+            else{
+                $('#spanPhone').hide();
+                brojac++;
+            }
             //provera za sekciju i broj karata
             let section = document.querySelector('#seat');
             let value = section.selectedIndex;
@@ -266,7 +273,7 @@ window.onload = function() {
                 brojac++;
             }
             console.log(brojac)
-            if(brojac == 5){
+            if(brojac == 6){
                 $('#modal').html('').css('display', 'none');
                 $('#modal-2').show();
             }
