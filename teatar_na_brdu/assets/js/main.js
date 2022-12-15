@@ -48,7 +48,7 @@ window.onload = function() {
         var footerMenu = document.querySelector('#footerMenu');
         var link = document.querySelector('#link');
         var importantLinks = ["Sitemap", "Dokumentacija"];
-        var important = ['sitemap.xml', 'dokumentacija']
+        var important = ['sitemap.xml', 'jelenadokumentacija.pdf']
         var socialIcon = ["instagram", "facebook", "twitter"];
         let socialLinks = ['https://www.instagram.com/teatarnabrdu/', 'https://sr-rs.facebook.com/teatarnabrdu/', 'https://twitter.com/tickets_rs/status/986905081898512384'];
         for(let i = 0; i < menuPages.length; i++){
@@ -327,12 +327,5 @@ window.onload = function() {
             document.querySelector('.icons').innerHTML += `<a href="${links[i]}" class="mx-3"><i class="fa-brands fa-${media[i]}"></i></a>`
         }
     }
-    // function authorSocialMedia(){
-    //     let authorLinks = ['https://www.instagram.com/berber__j/', 'https://www.linkedin.com/in/jelena-berber-5378bb252/', 'https://github.com/jelenaberber'];
-    //     let authorMedia = ['instagram', 'linkedin', 'github'];
-    //     for(let i = 0; i < authorLinks.length; i++){
-    //         document.querySelector('.icons').innerHTML += `<a href="${authorLinks[i]}" class="mx-2"><i class="fa-brands fa-${authorMedia[i]}"></i></a>`
-    //     }
-    // }
     
 }
